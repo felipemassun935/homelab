@@ -3,41 +3,89 @@
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
-
-  --color-bg:       #07070A;
-  --color-s1:       #0F0F12;
-  --color-s2:       #16161A;
-  --color-s3:       #1E1E23;
-  --color-bd:       #2A2A30;
-  --color-bds:      #1C1C21;
-
-  --color-t1:       #F0F0F5;
-  --color-t2:       #8A8A90;
-  --color-t3:       #46464C;
-
-  --color-accent:   #FF9F0A;
 }
 
-*, *::before, *::after {
-  box-sizing: border-box;
+/* ── Dark theme (default) ─────────────────────────────────────────── */
+:root {
+  --bg:  #07070A;
+  --s1:  #0F0F12;
+  --s2:  #16161A;
+  --s3:  #1E1E23;
+  --bd:  #2A2A30;
+  --bds: #1C1C21;
+
+  --t1:  #F0F0F5;
+  --t2:  #8A8A90;
+  --t3:  #46464C;
+
+  --a:   #FF9F0A;
+  --a10: rgba(255, 159, 10, 0.10);
+  --a15: rgba(255, 159, 10, 0.15);
+  --a20: rgba(255, 159, 10, 0.20);
+  --a25: rgba(255, 159, 10, 0.25);
+
+  --nav-scrolled-bg: rgba(7, 7, 10, 0.85);
+  --nav-scrolled-bd: rgba(42, 42, 48, 0.7);
+  --nav-base-bg:     rgba(7, 7, 10, 0);
+  --nav-base-bd:     rgba(42, 42, 48, 0);
+
+  --shadow-card:       0 2px 16px rgba(0, 0, 0, 0.28);
+  --shadow-card-hover: 0 8px 32px rgba(0, 0, 0, 0.40);
+  --shadow-sheet:      0 16px 48px rgba(0, 0, 0, 0.52);
+
+  --grain-opacity: 0.028;
+  --glow-color:    #FF9F0A;
+  --glow-opacity:  0.16;
 }
 
-html {
-  scroll-behavior: smooth;
+/* ── Light theme ──────────────────────────────────────────────────── */
+html.light {
+  --bg:  #F5F5F7;
+  --s1:  #FFFFFF;
+  --s2:  #EBEBED;
+  --s3:  #E0E0E3;
+  --bd:  #D1D1D6;
+  --bds: #E5E5EA;
+
+  --t1:  #1C1C1E;
+  --t2:  #636366;
+  --t3:  #AEAEB2;
+
+  --a:   #C07B00;
+  --a10: rgba(192, 123, 0, 0.10);
+  --a15: rgba(192, 123, 0, 0.15);
+  --a20: rgba(192, 123, 0, 0.20);
+  --a25: rgba(192, 123, 0, 0.25);
+
+  --nav-scrolled-bg: rgba(245, 245, 247, 0.88);
+  --nav-scrolled-bd: rgba(209, 209, 214, 0.80);
+  --nav-base-bg:     rgba(245, 245, 247, 0);
+  --nav-base-bd:     rgba(209, 209, 214, 0);
+
+  --shadow-card:       0 1px 4px rgba(0, 0, 0, 0.06), 0 2px 12px rgba(0, 0, 0, 0.06);
+  --shadow-card-hover: 0 4px 16px rgba(0, 0, 0, 0.10), 0 1px 4px rgba(0, 0, 0, 0.06);
+  --shadow-sheet:      0 8px 32px rgba(0, 0, 0, 0.18);
+
+  --grain-opacity: 0.014;
+  --glow-color:    #FF9F0A;
+  --glow-opacity:  0.07;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-}
+/* ── Base ─────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 
 body {
   margin: 0;
-  background-color: #07070A;
-  color: #F0F0F5;
+  background-color: var(--bg);
+  color: var(--t1);
   font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Grain overlay */
@@ -46,24 +94,24 @@ body::after {
   position: fixed;
   inset: 0;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
-  opacity: 0.028;
+  opacity: var(--grain-opacity);
   pointer-events: none;
   z-index: 9999;
+  transition: opacity 0.3s ease;
 }
 
 :focus-visible {
-  outline: 2px solid #FF9F0A;
+  outline: 2px solid var(--a);
   outline-offset: 3px;
   border-radius: 6px;
 }
 
-/* Scrollbar */
 ::-webkit-scrollbar { width: 5px; }
-::-webkit-scrollbar-track { background: #07070A; }
-::-webkit-scrollbar-thumb { background: #2A2A30; border-radius: 99px; }
-::-webkit-scrollbar-thumb:hover { background: #46464C; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--bd); border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: var(--t3); }
 
 ::selection {
-  background: rgba(255, 159, 10, 0.18);
-  color: #F0F0F5;
+  background: var(--a15);
+  color: var(--t1);
 }

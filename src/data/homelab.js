@@ -1,7 +1,7 @@
 export const HOST = {
   name: "bandito",
   cpu: "Intel i3-2120",
-  ram: "8 GB",
+  ram: "12 GB",
   storage: {
     system: "SSD 210 GB",
     nas: "RAID 1 · 2×1 TB → /mnt/tank",
@@ -18,7 +18,7 @@ export const HOST = {
 export const STATS = [
   { label: "Servicios en Docker", value: "8" },
   { label: "Puertos expuestos a internet", value: "0" },
-  { label: "RAM total", value: "8 GB" },
+  { label: "RAM total (VM: 10 GB)", value: "12 GB" },
   { label: "Almacenamiento NAS", value: "2 TB RAID 1" },
 ];
 
