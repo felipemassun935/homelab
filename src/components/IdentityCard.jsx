@@ -73,8 +73,8 @@ export function IdentityCard() {
       {/* Links */}
       <div className="mt-auto flex items-center gap-4">
         {[
-          { href: "https://github.com/tu-usuario/homelab", label: "GitHub" },
-          { href: "https://linkedin.com/in/tu-usuario",    label: "LinkedIn" },
+          { href: "https://github.com/felipemassun935", label: "GitHub" },
+          { href: "https://linkedin.com/in/massunfelipe",  label: "LinkedIn" },
         ].map(({ href, label }) => (
           <a
             key={label}

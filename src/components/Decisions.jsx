@@ -108,14 +108,9 @@ export function Decisions() {
       className="rounded-2xl p-5 flex flex-col h-full"
       style={{ background: "var(--s1)", border: "1px solid var(--bd)", boxShadow: "var(--shadow-card)" }}
     >
-      <div className="flex items-center justify-between mb-4">
-        <h2 className="text-sm font-semibold tracking-tight" style={{ color: "var(--t1)" }}>
-          Decisiones de arquitectura
-        </h2>
-        <span className="text-xs font-mono" style={{ color: "var(--t3)" }}>
-          {openId ? "1" : "0"}/{ARCH_DECISIONS.length} expandida
-        </span>
-      </div>
+      <h2 className="text-sm font-semibold tracking-tight mb-4" style={{ color: "var(--t1)" }}>
+        Decisiones de arquitectura
+      </h2>
 
       <div className="flex flex-col gap-2 flex-1">
         {ARCH_DECISIONS.map((d) => (
