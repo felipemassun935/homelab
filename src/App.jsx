@@ -42,10 +42,10 @@ function App() {
 
           {/* Row 2 */}
           <Cell span="md:col-span-5" delay={0.10}>
-            <Architecture />
+            <Services />
           </Cell>
           <Cell span="md:col-span-7" delay={0.14}>
-            <Services />
+            <Architecture />
           </Cell>
 
           {/* Row 3 */}
