@@ -47,7 +47,7 @@ export function Services() {
             key={cat}
             onClick={() => setActive(cat)}
             aria-pressed={active === cat}
-            className="relative px-2.5 py-1 rounded-full text-[10px] font-medium"
+            className="relative px-2.5 py-1 rounded-full text-xs font-medium"
             style={{ color: active === cat ? "var(--a)" : "var(--t3)" }}
           >
             {active === cat && (
@@ -76,8 +76,8 @@ export function Services() {
             style={{ background: "var(--s2)", border: "1px solid var(--bds)" }}
           >
             {/* Runtime dot */}
-            <span className="flex-shrink-0 mt-1.5 flex items-center gap-1 text-[9px] font-mono" style={{ color: "var(--t3)" }}>
-              <Container size={9} aria-hidden="true" />
+            <span className="flex-shrink-0 mt-1.5 flex items-center gap-1 text-[10px] font-mono" style={{ color: "var(--t3)" }}>
+              <Container size={10} aria-hidden="true" />
               {svc.inDocker ? "Docker" : "systemd"}
             </span>
 
@@ -87,11 +87,11 @@ export function Services() {
                 <span className="text-xs font-semibold leading-none" style={{ color: "var(--t1)" }}>
                   {svc.name}
                 </span>
-                <span className={`text-[9px] font-mono px-1.5 py-0.5 rounded-full border flex-shrink-0 ${CATEGORY_COLORS[svc.category]}`}>
+                <span className={`text-[10px] font-mono px-1.5 py-0.5 rounded-full border flex-shrink-0 ${CATEGORY_COLORS[svc.category]}`}>
                   {svc.category}
                 </span>
               </div>
-              <p className="text-[11px] mt-0.5 truncate" style={{ color: "var(--t2)" }}>{svc.role}</p>
+              <p className="text-xs mt-0.5 truncate" style={{ color: "var(--t2)" }}>{svc.role}</p>
             </div>
           </motion.li>
         ))}

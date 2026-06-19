@@ -18,7 +18,7 @@ function DecisionRow({ decision, isOpen, onToggle }) {
       >
         <div className="flex-1 min-w-0">
           <p
-            className="text-[12px] font-semibold leading-tight"
+            className="text-sm font-semibold leading-tight"
             style={{ color: isOpen ? "var(--a)" : "var(--t1)" }}
           >
             {decision.title}
@@ -28,7 +28,7 @@ function DecisionRow({ decision, isOpen, onToggle }) {
               {decision.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="text-[9px] font-mono px-1.5 py-0.5 rounded"
+                  className="text-[10px] font-mono px-1.5 py-0.5 rounded"
                   style={{ background: "var(--s3)", color: "var(--t3)", border: "1px solid var(--bds)" }}
                 >
                   {tag}
@@ -70,10 +70,10 @@ function DecisionRow({ decision, isOpen, onToggle }) {
                   <div key={label} className="flex gap-2.5">
                     <Icon size={12} style={{ color, flexShrink: 0, marginTop: 2 }} aria-hidden="true" />
                     <div>
-                      <p className="text-[9px] font-mono uppercase tracking-[0.08em] mb-1" style={{ color: "var(--t3)" }}>
+                      <p className="text-[10px] font-mono uppercase tracking-[0.08em] mb-1" style={{ color: "var(--t3)" }}>
                         {label}
                       </p>
-                      <p className="text-[11px] leading-relaxed" style={{ color: muted ? "var(--t2)" : "var(--t1)", fontWeight: muted ? 400 : 500 }}>
+                      <p className="text-xs leading-relaxed" style={{ color: muted ? "var(--t2)" : "var(--t1)", fontWeight: muted ? 400 : 500 }}>
                         {text}
                       </p>
                     </div>
@@ -83,7 +83,7 @@ function DecisionRow({ decision, isOpen, onToggle }) {
                   {decision.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="text-[9px] font-mono px-1.5 py-0.5 rounded"
+                      className="text-[10px] font-mono px-1.5 py-0.5 rounded"
                       style={{ background: "var(--s3)", color: "var(--t3)", border: "1px solid var(--bds)" }}
                     >
                       {tag}
@@ -112,7 +112,7 @@ export function Decisions() {
         <h2 className="text-sm font-semibold tracking-tight" style={{ color: "var(--t1)" }}>
           Decisiones de arquitectura
         </h2>
-        <span className="text-[10px] font-mono" style={{ color: "var(--t3)" }}>
+        <span className="text-xs font-mono" style={{ color: "var(--t3)" }}>
           {openId ? "1" : "0"}/{ARCH_DECISIONS.length} expandida
         </span>
       </div>

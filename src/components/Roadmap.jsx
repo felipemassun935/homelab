@@ -30,10 +30,10 @@ export function Roadmap() {
             style={{ background: "var(--s2)", border: "1px solid var(--bds)" }}
           >
             <div className="flex items-start justify-between gap-2">
-              <span className="text-[10px] font-mono" style={{ color: "var(--t3)" }}>
+              <span className="text-xs font-mono" style={{ color: "var(--t3)" }}>
                 {String(i + 1).padStart(2, "0")}
               </span>
-              <span className="text-[9px] font-mono px-2 py-0.5 rounded-full"
+              <span className="text-[10px] font-mono px-2 py-0.5 rounded-full"
                 style={{ background: "var(--s3)", border: "1px solid var(--bds)", color: "var(--t3)" }}>
                 pendiente
               </span>
@@ -43,11 +43,11 @@ export function Roadmap() {
               {item.title}
             </h3>
 
-            <p className="text-[11px] leading-relaxed" style={{ color: "var(--t2)" }}>
+            <p className="text-xs leading-relaxed" style={{ color: "var(--t2)" }}>
               {item.description}
             </p>
 
-            <p className="text-[10px] font-mono leading-relaxed mt-auto pt-2" style={{ color: "var(--t3)", borderTop: "1px solid var(--bds)" }}>
+            <p className="text-xs font-mono leading-relaxed mt-auto pt-2" style={{ color: "var(--t3)", borderTop: "1px solid var(--bds)" }}>
               <span style={{ color: "var(--a)", opacity: 0.85 }}>motivo:</span>{" "}
               {item.reason}
             </p>

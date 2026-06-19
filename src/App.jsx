@@ -65,7 +65,7 @@ function App() {
 
         {/* Inline footer */}
         <footer
-          className="mt-4 pt-4 flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] font-mono"
+          className="mt-4 pt-4 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs font-mono"
           style={{ borderTop: "1px solid var(--bds)", color: "var(--t3)" }}
         >
           <span>bandito · homelab personal</span>

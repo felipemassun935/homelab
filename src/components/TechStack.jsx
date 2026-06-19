@@ -37,12 +37,12 @@ export function TechStack() {
             className="rounded-xl p-3 flex flex-col gap-1 cursor-default"
             style={{ background: "var(--s2)", border: "1px solid var(--bds)" }}
           >
-            <p className={`text-[9px] font-mono uppercase tracking-[0.08em] font-semibold ${CATEGORY_COLORS[tech.category] ?? ""}`}
+            <p className={`text-[10px] font-mono uppercase tracking-[0.08em] font-semibold ${CATEGORY_COLORS[tech.category] ?? ""}`}
               style={!CATEGORY_COLORS[tech.category] ? { color: "var(--t3)" } : undefined}>
               {tech.category}
             </p>
             <p className="text-xs font-semibold leading-tight" style={{ color: "var(--t1)" }}>{tech.name}</p>
-            <p className="text-[10px] leading-tight" style={{ color: "var(--t3)" }}>{tech.description}</p>
+            <p className="text-[11px] leading-tight" style={{ color: "var(--t3)" }}>{tech.description}</p>
           </motion.div>
         ))}
       </div>

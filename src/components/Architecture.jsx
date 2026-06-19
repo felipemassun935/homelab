@@ -17,8 +17,8 @@ function PhysicalDiagram() {
             style={{ border: "1px solid var(--bd)", background: "var(--s3)" }}>
             <Globe size={13} style={{ color: "var(--t3)" }} aria-hidden="true" />
             <div>
-              <p className="text-[11px] font-mono font-medium" style={{ color: "var(--t1)" }}>Router ISP</p>
-              <p className="text-[9px] font-mono" style={{ color: "var(--t3)" }}>CGNAT — sin IP pública directa</p>
+              <p className="text-xs font-mono font-medium" style={{ color: "var(--t1)" }}>Router ISP</p>
+              <p className="text-[10px] font-mono" style={{ color: "var(--t3)" }}>CGNAT — sin IP pública directa</p>
             </div>
           </div>
 
@@ -28,7 +28,7 @@ function PhysicalDiagram() {
             style={{ border: "1px solid var(--a25)", background: "var(--a10)" }}>
             <Network size={13} style={{ color: "var(--a)" }} aria-hidden="true" />
             <div>
-              <p className="text-[11px] font-mono font-medium" style={{ color: "var(--t1)" }}>Switch Cisco 24p · capa 2</p>
+              <p className="text-xs font-mono font-medium" style={{ color: "var(--t1)" }}>Switch Cisco 24p · capa 2</p>
             </div>
           </div>
 
@@ -57,11 +57,11 @@ function PhysicalDiagram() {
                   : { border: "1px solid var(--bd)", background: "var(--s3)" }
                 }
               >
-                <p className="text-[10px] font-mono font-semibold" style={{ color: node.accent ? "var(--a)" : "var(--t1)" }}>
+                <p className="text-xs font-mono font-semibold" style={{ color: node.accent ? "var(--a)" : "var(--t1)" }}>
                   {node.label}
                 </p>
-                <p className="text-[9px] mt-0.5" style={{ color: "var(--t2)" }}>{node.sub}</p>
-                <p className="text-[9px]" style={{ color: "var(--t3)" }}>{node.sub2}</p>
+                <p className="text-[10px] mt-0.5" style={{ color: "var(--t2)" }}>{node.sub}</p>
+                <p className="text-[10px]" style={{ color: "var(--t3)" }}>{node.sub2}</p>
               </div>
             </div>
           ))}
@@ -139,13 +139,13 @@ function LogicalDiagram() {
               style={{ border: "1px solid var(--a25)", background: "var(--a15)" }}
             >
               <div>
-                <p className="text-[9px] font-mono font-semibold leading-tight" style={{ color: "var(--a)" }}>
+                <p className="text-[10px] font-mono font-semibold leading-tight" style={{ color: "var(--a)" }}>
                   Tailscale
                 </p>
-                <p className="text-[9px] font-mono leading-tight" style={{ color: "var(--a)", opacity: 0.7 }}>
+                <p className="text-[10px] font-mono leading-tight" style={{ color: "var(--a)", opacity: 0.7 }}>
                   mesh
                 </p>
-                <p className="text-[8px] font-mono mt-0.5 leading-tight" style={{ color: "var(--t3)" }}>
+                <p className="text-[10px] font-mono mt-0.5 leading-tight" style={{ color: "var(--t3)" }}>
                   WireGuard
                 </p>
               </div>
@@ -168,10 +168,10 @@ function LogicalDiagram() {
                 boxShadow: "var(--shadow-card)",
               }}
             >
-              <p className="text-[10px] font-mono font-semibold leading-none" style={{ color: "var(--t1)" }}>
+              <p className="text-xs font-mono font-semibold leading-none" style={{ color: "var(--t1)" }}>
                 {node.label}
               </p>
-              <p className="text-[8px] mt-0.5" style={{ color: "var(--t3)" }}>
+              <p className="text-[10px] mt-0.5" style={{ color: "var(--t3)" }}>
                 {node.sub}
               </p>
             </div>
@@ -179,7 +179,7 @@ function LogicalDiagram() {
         ))}
       </div>
 
-      <p className="text-[10px] text-center font-mono mt-1" style={{ color: "var(--t3)" }}>
+      <p className="text-xs text-center font-mono mt-1" style={{ color: "var(--t3)" }}>
         Todos los nodos se resuelven por hostname · cifrado punto a punto
       </p>
     </div>
